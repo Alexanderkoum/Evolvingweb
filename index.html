@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolving web - Interview - Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="/" class="Form" id='form' onsubmit="handleSubmit(event)">
+            <div class="Form__title" id="formTitle">
+                Contact informations
+            </div>
+            <div class="Form__content" id="formContent">
+                <div id='step1'class="step step1">
+                    <input type="text" name="Firstname" id="firstame" placeholder="Firstame">
+                    <input type="text" name="Lastname" id="lastname" placeholder="Lastname">
+                    <input type="text" name="Company name" id="company" placeholder="Company name">
+                </div>
+                <div id='step2'class="step step2">
+                    <label for="Name">Cardholder name</label><input type="text" name="Cardholder_name" id="Cardholder_name" placeholder="john doe">
+                    <label for="Name">Credit card number</label><input type="text" name="Credit_card_number" id="Credit_card_number" placeholder="xxxx xxxx xxxx xxxx">
+                    <div class="Form__paiement">
+                        <label for="Name">Expiration date<input type="text" name="Expiration_date" id="Expiration_date" placeholder="MM/YY"></label>
+                        <label for="Name">CVC<input type="text" name="cvc" id="cvc" placeholder="xxx"></label>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="Form-sent" id='formSent'>
+                <img src="/img/checked-animation.gif" alt="">
+            </div>
+            <div class="Form__buttons" id="formButtons">
+                <button type="button" onclick="nextStep(2)" id='nextBtn'> <span> continue to payment</span>  <img src="/img/right-chevron.svg" alt="right chevron"></button>
+                <button type="submit"> <span> make payment </span>  <img src="/img/right-chevron.svg" alt="right chevron"></button>
+            </div>
+        </form>
+    </div>
+    
+    
+
+<script src="script.js"></script>
+</body>
+</html>
