@@ -18,15 +18,15 @@ function nextStep(currentStep){
         curStep = document.getElementById(CurActiveStep); // get the current active step value using the id
 
         curStep.classList.add("active"); // add class active to the current step content to display it .
-        nextBtn.style.display = "flex";
-        submitBtn.style.display = "none"
+        nextBtn.style.display = "flex"; // displays the next button on initialisation
+        submitBtn.style.display = "none" // hides the submit button on initialisation
 
         return;
     }else{ // we display the second step went the button if click 
 
         if(validateStep()){ // validate the current input field , if the validation is true then proceed with the inner code 
-            nextBtn.style.display = "none";
-            submitBtn.style.display = "flex";
+            nextBtn.style.display = "none"; // hide the next step button
+            submitBtn.style.display = "flex"; // displays the submit button
 
             curStep.classList.remove("active"); // remove the class active from the current step
             nextActiveStep = "step" + currentStep; // variable to store the next step id
@@ -35,9 +35,7 @@ function nextStep(currentStep){
 
             if(nextActiveStep){ // verify if the nextstep exists
                 nextActStep.classList.add("active"); // add the active class to the next step content
-                updateButton();
-                /*btnNext= document.querySelector(".Form__buttons button"); //get the button
-                btnNext.type = "submit" // update the type of the button to submit to use it as sending button */
+                
             }
             
         }
@@ -47,11 +45,6 @@ function nextStep(currentStep){
     
 }
 
-//function to automatically update the content of the button
-function updateButton(){
-    btnContent = document.querySelector(".Form__buttons button span"); // get the value of the button
-    btnContent.innerHTML = "send"; // update the value of the button to "send" 
-}
 
 //function to validate the fields value before goign to the next step
 function validateStep(){
@@ -68,8 +61,8 @@ function validateStep(){
         lname.style.outline = "1px solid red"; // modify the ui to clearly indicate where to correct the value
         return false; // exit the function with false outcome
     }else if(company.value === ""){ // verify if the lastname field is blank
-        alert("please fill in the last name"); // alert message to fill the field
-        lname.style.outline = "1px solid red"; // modify the ui to clearly indicate where to correct the value
+        alert("please fill in the company name"); // alert message to fill the field
+        company.style.outline = "1px solid red"; // modify the ui to clearly indicate where to correct the value
         return false; // exit the function with false outcome
     }else{
         return true; // if all the field have a correct value , exit the function with true
